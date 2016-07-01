@@ -20,20 +20,6 @@ class SplitFileSql():
             self.fp.close()
         return self.lines_reads
 
-    def getLineRange(self, start, end):
-        c = 0
-        end = start + end
-        lines = []
-        for line in self.getLines():
-            if c < start:
-                c += 1
-                continue
-            if c > end:
-                break
-            lines.append(line)
-            c += 1
-        return lines
-
     def create_file(self, lines):
         self.current_file_output += 1
         file = str(self.current_file_output) + "_" + self.file_output
