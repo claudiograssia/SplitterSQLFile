@@ -2,36 +2,6 @@
 
 files = "sqlfile.sql"
 
-class IteratorLine():
-
-    seek = 0
-
-    def __init__(self, lines=[]):
-        self.lines = lines
-
-    def len(self):
-        return len(self.lines)
-
-    def get(self, i):
-        return self.lines[i]
-
-    def exist(self, i):
-        return len(self.lines) - 1 <= i
-
-    def range(self, start, end):
-        end = start + end
-        if start > self.len()-1:
-            return []
-        if end > self.len()-1:
-            end = self.len() - 1
-        return self.lines[start:end]
-
-    def getLast(self):
-        if self.len() == 0:
-            return ""
-        return self.lines[-1]
-
-
 class SplitFileSql():
 
     lines_reads = []
